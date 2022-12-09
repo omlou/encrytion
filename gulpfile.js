@@ -13,6 +13,7 @@ const jsTask=series(delTask,function(){
     .pipe(uglify())
     .pipe(rename({suffix:'.min'}))
     .pipe(dest('dist/'))
+    .pipe(dest('docs/'))
 })
 
 const watchTask=function(){
