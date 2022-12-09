@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>encrytion</title>
+  <script src="../dist/encrytion.min.js"></script>
+  <style>
+    body{
+      margin: 30px;
+      font-size: 14px;
+      color: #333;
+    }
+    .text{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    textarea{
+      resize: none;
+      height: 520px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+      font-size: 14px;
+    }
+    textarea:focus{
+      border-color: #1677ff;
+      outline: none;
+    }
+    .btn{
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+    }
+    input{
+      width: 230px;
+      height: 29px;
+      font-size: 14px;
+      padding: 0 10px;
+      border-radius: 3px;
+      border: 1px solid #aaa;
+    }
+    input:focus{
+      border-color: #ff4d4f;
+      outline: none;
+    }
+    button{
+      border: 1px solid #ccc;
+      background-color: #fff;
+      padding: 0 15px;
+      height: 31px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    button:active{
+      border-color: #1677ff;
+      color: #1677ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="text">
+      <textarea id="a" cols="30" rows="10"></textarea>
+      <textarea id="b" cols="30" rows="10"></textarea>
+    </div>
+    <div class="btn">
+      <input id="p" type="text">
+      <button onclick="encry()">加密</button>
+      <button onclick="decry()">解密</button>
+    </div>
+  </div>
+  <script>
+    function encry(){
+      b.value=Encry.encrypt(a.value,p.value)
+    }
+    function decry(){
+      b.value=Encry.decrypt(a.value,p.value)
+    }
+  </script>
+</body>
+</html>
